@@ -567,6 +567,12 @@ a.reg:hover{background:var(--lime);color:var(--wine);text-decoration-color:var(-
   .reg-deco .deco-ball{animation:sway 4s ease-in-out infinite}
   .reg-deco .b2{animation-delay:-2s}
 }
+.mini-sched{display:grid;gap:12px;margin-top:6px}
+.ms-h{font-family:var(--display);font-weight:700;font-size:18px;color:var(--wine)}
+.mini-sched ul{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--wine)}
+.mini-sched li{display:grid;grid-template-columns:62px 1fr;gap:12px;padding:9px 0;border-bottom:1.5px solid var(--wine);font-size:14px;line-height:1.4;color:var(--ink)}
+.mini-sched li b{font-family:var(--display);font-weight:700;color:var(--wine);font-variant-numeric:tabular-nums}
+.ms-time{font-size:13.5px;line-height:1.5;font-weight:500;color:var(--ink)}
 .fallback{font-size:13px;color:var(--ink);font-weight:500}
 .form-card{position:relative;background:var(--cream);border-radius:28px;padding:10px;box-shadow:0 0 0 3px var(--wine)}
 .form-card iframe{position:relative;z-index:1;display:block;width:100%;height:min(760px,78vh);min-height:520px;border:0;border-radius:20px;background:transparent}
@@ -603,7 +609,6 @@ footer.band{background:var(--wine);color:var(--pink);padding-block:28px 40px;bor
   .bios,.faq-grid{grid-template-columns:1fr}
   .sched-foot{grid-template-columns:1fr}
   .reg-side{position:static}
-  .reg-deco{display:none}
   .register .reg-star1{width:96px!important;left:-34px!important;top:-48px!important}
   .register{padding-top:84px}
   .form-card{padding:6px;border-radius:22px}
@@ -669,7 +674,6 @@ footer.band{background:var(--wine);color:var(--pink);padding-block:28px 40px;bor
     <ul class="bar-links" id="menu">
       <li><a href="#about">О встречах</a></li>
       <li><a href="#program">Программа</a></li>
-      <li><a href="#schedule">Расписание</a></li>
       <li><a href="#hosts">Ведущие</a></li>
       <li><a href="#faq">Вопросы</a></li>
       <li class="m-only"><a href="#team">Встреча для команды</a></li>
@@ -837,39 +841,6 @@ footer.band{background:var(--wine);color:var(--pink);padding-block:28px 40px;bor
   </div>
 </section>
 
-<!-- ============ SCHEDULE ============ -->
-<section class="band schedule" id="schedule">
-  <svg class="tent" viewBox="0 0 1280 165" preserveAspectRatio="none" aria-hidden="true" style="background:var(--lime)">
-    <path fill="#eef0e3" d="M0 165V150C230 132 470 90 640 0C810 90 1050 132 1280 150V165Z"/>
-    <path fill="#880e2d" d="M0 150C230 132 470 90 640 0C810 90 1050 132 1280 150V112C1060 100 820 70 640 0C460 70 220 100 0 112Z"/>
-  </svg>
-  <div class="wrap">
-    <div class="sched-head">
-      <h2 class="h2"><svg class="zh" aria-hidden="true"><use href="#zh"/></svg>расписание</h2>
-      <div class="timebadge"><b>17:00</b><span>CET</span><small>19:00 мск</small></div>
-    </div>
-    <ul class="rows">
-      <li><span class="d">18.11</span><span class="t">Кривые зеркала горизонтального королевства</span></li>
-      <li><span class="d">25.11</span><span class="t">Когда у команды нет сил</span></li>
-      <li><span class="d">02.12</span><span class="t">Деньги — не проблема!</span></li>
-      <li><span class="d">09.12</span><span class="t">Я хочу уйти, но не знаю, как сказать</span></li>
-      <li><span class="d">16.12</span><span class="t">Прощание с иллюзиями</span></li>
-    </ul>
-    <div class="sched-foot">
-      <div class="prose">
-        <p>Все встречи проходят по средам в Zoom.</p>
-        <div class="tz">
-          <span class="chip">17:00–19:00 CET</span>
-          <span class="chip alt">19:00–21:00 по Москве</span>
-        </div>
-        <p>Для участия нужно только <a class="reg" href="#register">зарегистрироваться</a>. В форме можно выбрать одну или несколько встреч.</p>
-        <p class="zoom-note"><svg aria-hidden="true"><use href="#mail-ico"/></svg><span>Ссылка в Zoom будет приходить вам на почту за <span class="nw">2–3 часа</span> до начала каждой встречи.</span></p>
-      </div>
-      <a class="btn btn-wine" href="#register">Записаться</a>
-    </div>
-  </div>
-</section>
-
 <!-- ============ HOSTS ============ -->
 <section class="band hosts" id="hosts">
   <div class="hosts-top">
@@ -940,11 +911,16 @@ footer.band{background:var(--wine);color:var(--pink);padding-block:28px 40px;bor
         <div class="prose">
           <p>Выберите темы, которые вам сейчас пригодятся, и оставьте свои данные в форме. Для участия нужно только <a class="reg" href="#regform">зарегистрироваться</a>.</p>
         </div>
-        <div class="reg-deco" aria-hidden="true">
-          <svg class="ring" viewBox="0 0 200 200"><defs><path id="ringpath" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs><text><textPath href="#ringpath" textLength="488" lengthAdjust="spacing">сложные разговоры ✶ сложные разговоры ✶</textPath></text></svg>
-          <svg class="deco-star"><use href="#star"/></svg>
-          <span class="deco-ball b1"></span><span class="deco-ball b2"></span>
-          <svg class="deco-zh"><use href="#zh"/></svg>
+        <div class="mini-sched">
+          <p class="ms-h">Расписание</p>
+          <ul>
+            <li><b>18.11</b><span>Кривые зеркала горизонтального королевства</span></li>
+            <li><b>25.11</b><span>Когда у команды нет сил</span></li>
+            <li><b>02.12</b><span>Деньги — не проблема!</span></li>
+            <li><b>09.12</b><span>Я хочу уйти, но не знаю, как сказать</span></li>
+            <li><b>16.12</b><span>Прощание с иллюзиями</span></li>
+          </ul>
+          <p class="ms-time">По средам, <span class="nw">17:00–19:00 CET</span> <span class="nw">(19:00–21:00 по Москве)</span>, в Zoom. Ссылка будет приходить на почту за <span class="nw">2–3 часа</span> до начала каждой встречи.</p>
         </div>
         <p class="fallback">Форма не загрузилась? <a class="reg" href="https://airtable.com/appeoZoGHjPYXhGWE/pagCgCVPoxADN5UfP/form" target="_blank" rel="noopener">Откройте её в новой вкладке ↗</a></p>
       </div>
